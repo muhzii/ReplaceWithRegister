@@ -42,6 +42,7 @@
 "				file creation
 
 function! ReplaceWithRegister#SetRegister()
+    call setreg('+', system('wl-paste --no-newline')->substitute('', '', 'g'))
     let s:register = v:register
 endfunction
 function! ReplaceWithRegister#IsExprReg()
